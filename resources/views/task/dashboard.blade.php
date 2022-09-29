@@ -1,9 +1,10 @@
-@section('title', "todo-app")
+@extends('layouts.app')
+
+@section('title', "todo app")
 
 
 
 @section('content')
-
 
 
 

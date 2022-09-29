@@ -11,9 +11,18 @@ class Task extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {   
+
+        $this->middleware('auth');
+
+     }
     public function index()
     {
         //
+
+        return view('task.dashboard');
     }
 
     /**
@@ -24,6 +33,8 @@ class Task extends Controller
     public function create()
     {
         //
+
+
     }
 
     /**
@@ -35,6 +46,8 @@ class Task extends Controller
     public function store(Request $request)
     {
         //
+        $user_id = Auth::id();
+        $request->input('task');
     }
 
     /**
