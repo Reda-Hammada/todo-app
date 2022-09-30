@@ -31,8 +31,8 @@
                        required >
 
                 <label>Confirm password :</label>
-                <input type='passowrd'
-                       name='password-confirmation'
+                <input type='password'
+                       name='password_confirmation'
                        required >
             </div>
             <div>

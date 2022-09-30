@@ -23,3 +23,4 @@ Auth::routes();
 
 Auth::routes();
 
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
