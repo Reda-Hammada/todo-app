@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class Task extends Controller
 {
     /**
@@ -33,7 +34,7 @@ class Task extends Controller
     public function create()
     {
         //
-
+        
 
     }
 
@@ -45,10 +46,17 @@ class Task extends Controller
      */
     public function store(Request $request)
     {
-        //
+     
+        $taskModel = new Task();
+        
         $user_id = Auth::id();
-        $request->input('task');
-    }
+        $task = $request->input('task');
+
+        $taskModel->task = $task;
+        $taskModel->save()->where('user_id', $user_id);
+    }   
+
+
 
     /**
      * Display the specified resource.
@@ -56,11 +64,7 @@ class Task extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
+  
     /**
      * Show the form for editing the specified resource.
      *
@@ -70,6 +74,7 @@ class Task extends Controller
     public function edit($id)
     {
         //
+
     }
 
     /**
@@ -82,6 +87,8 @@ class Task extends Controller
     public function update(Request $request, $id)
     {
         //
+        
+
     }
 
     /**

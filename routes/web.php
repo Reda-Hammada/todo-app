@@ -15,12 +15,12 @@ use App\Http\Controllers\Task;
 |
 */
 
-Route::get('/', [Task::class, 'index']);
+Route::get('/', function (){
+
+    return view('task.dashboard');
+});
+Route::resource('task', Task::class);
 
 Auth::routes();
 
-// Route::auth();
-
-Auth::routes();
-
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
