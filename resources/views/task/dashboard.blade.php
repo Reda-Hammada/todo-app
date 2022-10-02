@@ -6,18 +6,36 @@
 
 @section('content')
 
+<header>
+    <nav>
+        $user_id = Auth::id();
 
-<h1>To do app</h1>
+    </nav>
+</header>
+<main>
+    <section>
         <div>
-            <form method="POST" action="{{ route('task.store') }}">
-
+            <form method="POST" action = {{ route('task.store') }}>
+    
                 @csrf
-
+    
                 <div>
                     <input type='text' 
                             name='task'>
                 </div>
-                
+                <div>
+                    <input type="submit"
+                           name="" 
+                           value="Create to do">
             </form>
         </div>
+         @foreach($tasks as $task)
+        <div>
+            <p>{{ $task['task_name'] }}</p>
+        </div>
+        @endforeach
+
+    </section>
+</main>
+        
 @endsection

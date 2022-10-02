@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('task', function (Blueprint $table) {
+        Schema::create('taskmodels', function (Blueprint $table) {
             $table->id()->unsigned();
             $table->string('task_name', 255);
             $table->timestamps();

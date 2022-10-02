@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Taskmodel;
+
 
 
 class Task extends Controller
@@ -23,7 +26,13 @@ class Task extends Controller
     {
         //
 
-        return view('task.dashboard');
+
+        $user_id = Auth::id();
+        $task = new Taskmodel();
+        $tasks  = $task->All()->where('user_id', $user_id);
+
+        return view('task.dashboard', ['tasks' => $tasks]);
+
     }
 
     /**
@@ -31,12 +40,7 @@ class Task extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-        
-
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -47,13 +51,16 @@ class Task extends Controller
     public function store(Request $request)
     {
      
-        $taskModel = new Task();
+        $taskModel = new Taskmodel();
         
         $user_id = Auth::id();
-        $task = $request->input('task');
 
-        $taskModel->task = $task;
-        $taskModel->save()->where('user_id', $user_id);
+        $taskModel->task_name = $request->task;
+        $taskModel->user_id = $user_id;
+        $taskModel->save();
+
+        redirect('task');
+
     }   
 
 

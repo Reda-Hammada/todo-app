@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Task;
+use App\Http\Controllers\HomeController;
+
 
 
 /*
@@ -15,12 +17,7 @@ use App\Http\Controllers\Task;
 |
 */
 
-Route::get('/', function (){
-
-    return view('task.dashboard');
-});
 Route::resource('task', Task::class);
-
+Route::get('/',[HomeController::class, 'index']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

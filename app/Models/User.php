@@ -44,6 +44,6 @@ class User extends Authenticatable
 
     public function task (){
 
-        return $this->hasOne('App/task');
+        return $this->hasOne('App/taskmodel');
     }
 }

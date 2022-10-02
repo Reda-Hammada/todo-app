@@ -36,6 +36,7 @@
             <input type='submit'
                    name='login'
                    value='Log in'>
+            <button><a href="{{ route('register') }}">Register</a></button>
         </div>
 
     </form>
