@@ -38,7 +38,7 @@
                     <input type='submit'
                             name='login'
                             value='Log in'>
-                    <button><a href="{{ route('register') }}">Register</a></button>
+                   
                 </div>
         
             </form>
@@ -46,6 +46,10 @@
         
         <div class='bg_container'>
             <h1>Welcome back</h1>
+            <p>You don't have an account yet ?<br>
+                Register now clicking the button below
+            </p>
+            <button><a href="{{ route('register') }}">Register</a></button>
        </div>
             
     </main>
