@@ -7,7 +7,12 @@
   \*****************************/
 /***/ (() => {
 
+var loginForm = document.getElementById();
+var registerForm = document.getElementById(); // 
 
+var logiValidation = function logiValidation() {};
+
+var registerValidation = function registerValidation() {};
 
 /***/ }),
 
