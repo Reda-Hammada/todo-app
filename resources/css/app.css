@@ -22,9 +22,37 @@
 
  /* Login  page */
 
- 
+
+    body {
+
+        background-color: var(--backround-color);
+    }
+
+    .ultimate_container {
+        background-color: #fff;
+        width:50%;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right:auto;
+        height:400px;
+        display: flex;
+        border-radius: 7px;
+    }
 
 
+    
+    .bg_container 
+    {
+        width: 100%;
+        text-align: center;
+        background-color: rgb(196, 0, 196);
+    }
+
+    .form_container 
+    {
+        width: 50%;
+        text-align: center;
+    }
 
 
 

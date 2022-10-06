@@ -1,1 +1,60 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap);
+ 
+ 
+ * {
 
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+ }
+
+ :root {
+
+    --universal-font: 'Josefin Sans', sans-serif;
+    --backround-color: hsla(236, 33%, 92%, 1);
+    --tasks-container-color: hsl(0, 0%, 98%);
+    --insert-button: hsl(236, 33%, 92%);
+    --dark-theme-color:  hsl(233, 14%, 35%);
+    --tasks-container-dark-theme :  hsla(237, 14%, 26%, 1);
+
+ }
+
+ /* Login  page */
+
+
+    body {
+
+        background-color: var(--backround-color);
+    }
+
+    .ultimate_container {
+        background-color: #fff;
+        width:50%;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right:auto;
+        height:400px;
+        display: flex;
+        border-radius: 7px;
+    }
+
+
+    
+    .bg_container 
+    {
+        width: 100%;
+        text-align: center;
+        background-color: rgb(196, 0, 196);
+    }
+
+    .form_container 
+    {
+        width: 50%;
+        text-align: center;
+    }
+
+
+
+
+
+ /* Login page */
