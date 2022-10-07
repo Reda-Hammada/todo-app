@@ -116,6 +116,27 @@
         margin-top:2%;
 
     }
+
+    .form_container  .register_button_mobile {
+
+        background-color: var(--backround-color);
+        color:var(--login-register-bg-color);
+        font-weight: bold;
+        border-radius: 3px;
+        height: 30px;
+        width: 120px;
+        border: hidden;
+        margin-top: 5%;
+        cursor: pointer;
+        font-weight: bold;
+        display: none;
+    }
+
+    .form_container .register_button_mobile  a{
+
+        text-decoration: none;
+        color:var(--login-register-bg-color);
+    }
     
     .form_container .error_message {
         color:red;
@@ -128,3 +149,26 @@
 
 
 
+ @media screen and (max-width:800px) {
+     
+    /* display register button on mobile */
+    .form_container  .register_button_mobile {
+        display: inline;
+    }
+  
+    /* hide welcome back */
+    .bg_container {
+
+        display:none;
+    }
+    
+    .form_container {
+
+        width: 100%;
+        padding-top:15%;
+        text-align: center;
+
+        
+    }
+
+}

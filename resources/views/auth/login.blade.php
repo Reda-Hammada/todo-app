@@ -48,8 +48,9 @@
                     <input type='submit'
                             name='login'
                             value='Log in'>
-                   
+                
                 </div>
+                    <button class='register_button_mobile'><a href="{{ route('register') }}">Register</a></button>
         
             </form>
         </div>
