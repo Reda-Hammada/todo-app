@@ -116,6 +116,13 @@
         margin-top:2%;
 
     }
+    
+    .form_container .error_message {
+        color:red;
+        font-weight: bolder;
+        padding-bottom: 2%;
+  
+    }
 
  /* Login page */
 

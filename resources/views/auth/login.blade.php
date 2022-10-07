@@ -8,7 +8,7 @@
 <main class="ultimate_container">
 
         <div class='form_container'>
-            <form method="POST" action="{{ route('login') }}">
+            <form id='login_form' method="POST" action="{{ route('login') }}">
                 @csrf
         
         
@@ -16,16 +16,26 @@
         
                 <div>
         
-                    <input type='text'
+                    <input onchange="logiValidation" id='email' type='text'
                             name='email'>
-        
+                    <div class='error_message'>
+                        @error('email')
+                                {{ $message }}
+                        @enderror
+                    </div>
                 </div>
         
                 <label>Password</label>
         
                 <div>
-                    <input type="password"
+                    <input id='password' type="password"
                             name="password" >
+                    <div class='error_message'>
+                        @error('password')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                        
                 </div>
                 <div>
                     <input type='checkbox' 
