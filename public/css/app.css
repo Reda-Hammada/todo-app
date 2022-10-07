@@ -160,6 +160,44 @@
         height: 55vh;
     }
 
+    .navbar_container {
+
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding-top: 3%;
+    } 
+
+    .navbar_container .todo_heading_container h1{
+        color: #fff;
+        letter-spacing: 2px;
+    }
+    .mode_icon_container img {
+
+        cursor: pointer;
+    }
+
+    .add_todo_form {
+        width:100%;
+        text-align: center;
+        margin-top: 5%;
+    }
+
+    .add_todo_form form input[type=text]{
+
+        width: 39%;
+        height: 40px;
+        border:hidden;
+        border-radius: 4px;
+        padding-left: 3%;
+        font-weight:bold;
+        color: var(--dark-theme-color)
+    }
+    .add_todo_form form input[type=text]:focus {
+
+
+        outline: none;
+    }
 /* task dashboard */
 
  @media screen and (max-width:800px) {
@@ -185,6 +223,8 @@
 
         
     }
+
+
 
      /* Login & register page */
 
