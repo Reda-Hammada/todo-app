@@ -151,10 +151,22 @@
 
  /* Login & register page */
 
+/* task dashboard */
+    .header_background{
+        
+        background-image: url('/images/bg-desktop-light.jpg');
+        background-repeat:no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 55vh;
+    }
 
+/* task dashboard */
 
  @media screen and (max-width:800px) {
      
+     /* Login & register page */
+
     /* display register button on mobile */
     .form_container  .register_button_mobile {
         display: inline;
@@ -174,5 +186,7 @@
 
         
     }
+
+     /* Login & register page */
 
 }
