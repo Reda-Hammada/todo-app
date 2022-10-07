@@ -198,6 +198,19 @@
 
         outline: none;
     }
+
+    .add_todo_form form  .submit_container input[type=submit]{
+
+        margin-top:1%;
+        background-color: var(--backround-color);
+        color:var(--login-register-bg-color);
+        font-weight: bold;
+        border-radius: 3px;
+        height: 30px;
+        border:hidden;
+        width: 120px; 
+        cursor: pointer;  
+    }
 /* task dashboard */
 
  @media screen and (max-width:800px) {

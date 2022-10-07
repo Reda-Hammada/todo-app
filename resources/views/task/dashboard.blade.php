@@ -25,7 +25,7 @@
                         name='task'
                         value="Create a new todo...">
             </div>
-            <div>
+            <div class='submit_container'>
                 <input type="submit"
                        name="submit" 
                        value="Create to do">
