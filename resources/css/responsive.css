@@ -1,9 +1,0 @@
-
-
-@media screen and (max-width:800px) {
-     
-    /* display register button on mobile */
-    .form_container .mobile_register_container .register_button_mobile {
-        display: block;
-    }
-}

@@ -1,5 +1,4 @@
  
- 
  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
  * {
@@ -21,7 +20,7 @@
 
  }
 
- /* Login  page */
+ /* Login & register page */
 
 
     body {
@@ -29,14 +28,14 @@
         background-color: var(--backround-color);
         font-family: var(--universal-font);
     }
-
+    /* Login and Register */
     .ultimate_container {
         background-color: #fff;
         width:50%;
         margin-top: 10%;
         margin-left: auto;
         margin-right:auto;
-        height:400px;
+        height:450px;
         display: flex;
         border-radius: 7px;
     }
@@ -91,8 +90,12 @@
         text-align: center;
         width: 50%;
     }
-
+    .register_form {
+        margin-top: 2%;
+    }
+    /*  login and Register inputs */
     .form_container form input[type=text],
+                         input[type=email],
                          input[type=password] {
 
         width:80%;
@@ -133,7 +136,7 @@
         display: none;
     }
 
-    .form_container .register_button_mobile  a{
+    .form_container   a{
 
         text-decoration: none;
         color:var(--login-register-bg-color);
@@ -146,7 +149,7 @@
   
     }
 
- /* Login page */
+ /* Login & register page */
 
 
 

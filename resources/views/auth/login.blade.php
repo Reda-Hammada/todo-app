@@ -16,7 +16,7 @@
         
                 <div>
         
-                    <input onchange="logiValidation" id='email' type='text'
+                    <input onchange="logiValidation" id='email' type='email'
                             name='email'>
                     <div class='error_message'>
                         @error('email')
