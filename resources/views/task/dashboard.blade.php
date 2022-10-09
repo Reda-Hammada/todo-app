@@ -6,7 +6,7 @@
 
 @section('content')
 
-<header class="header_background">
+<main class="header_background">
     <nav class="navbar_container">
         <div class="todo_heading_container">
             <h1>TODO</H1>
@@ -32,17 +32,19 @@
             </div>
         </form>
     </div>
-</header>
-<main>
-    <section>
-     
-         @foreach($tasks as $task)
-        <div>
-            <p>{{ $task['task_name'] }}</p>
-        </div>
-        @endforeach
 
+    <section class='ultimate_tasks_container'>
+     
+ 
+        @foreach($tasks as $task)
+         <div id="task_container" class="task_container">
+            
+                <input id='check' type='checkbox' >
+                <p id='task'>{{ $task['task_name'] }}</p>
+                <a href="{{ route('task.destroy',[$task['id']]) }}"><img id='delete_cross' src="{{ asset('images/icon-cross.svg') }}" ></a>
+                        
+         </div>
+        @endforeach
     </section>
-</main>
-        
+</main>        
 @endsection

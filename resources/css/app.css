@@ -212,6 +212,65 @@
         width: 120px; 
         cursor: pointer;  
     }
+
+    /* tasks container */
+
+    .ultimate_tasks_container{
+        
+        width: 39%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+    }
+/* 
+    .ultimate_tasks_container:first-child{
+
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border-bottom: 0px;
+
+    } */
+    
+
+    .task_container {
+
+        width :100%;
+        background-color: #fff;
+        height: 40px;
+        padding-top:2%;
+        border-bottom: solid 1px grey;
+        cursor: pointer;
+        display: flex;
+        padding-left:10%;
+        padding-right:10%;
+
+        justify-content: space-between;
+    }
+
+    .task_container:first-child {
+
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+    }
+    
+    .task_container:last-child {
+
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+    }
+
+
+
+    .task_container img {
+
+        display:none;
+    }
+
+    
+
+
 /* task dashboard */
 
  @media screen and (max-width:800px) {

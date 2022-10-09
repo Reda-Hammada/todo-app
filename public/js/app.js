@@ -7,7 +7,25 @@
   \*****************************/
 /***/ (() => {
 
+// toggle delete cross 
+var taskContainer = document.getElementById('task_container');
+var delete_cross = document.getElementById('delete_cross');
+taskContainer.addEventListener('mouseover', function () {
+  delete_cross.style.display = 'flex';
+});
+taskContainer.addEventListener('mouseout', function () {
+  delete_cross.style.display = 'none';
+}); // toggle chekcbox
 
+var checkBox = document.getElementById('check');
+var task = document.getElementById('task');
+checkBox.addEventListener('change', function () {
+  if (this.checked) {
+    task.style.textDecoration = 'line-through';
+  } else {
+    task.style.textDecoration = 'none';
+  }
+});
 
 /***/ }),
 
