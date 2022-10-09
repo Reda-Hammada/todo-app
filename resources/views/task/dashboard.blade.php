@@ -37,11 +37,11 @@
      
  
         @foreach($tasks as $task)
-         <div id="task_container" class="task_container">
+         <div   class="task_container">
             
                 <input id='check' type='checkbox' >
                 <p id='task'>{{ $task['task_name'] }}</p>
-                <a href="{{ route('task.destroy',[$task['id']]) }}"><img id='delete_cross' src="{{ asset('images/icon-cross.svg') }}" ></a>
+                <a href="{{ route('task.destroy',[$task['id']]) }}"><img class='img_cross'  src="{{ asset('images/icon-cross.svg') }}" ></a>
                         
          </div>
         @endforeach
