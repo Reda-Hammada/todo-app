@@ -38,14 +38,13 @@ var container = document.querySelector('#task_container'); // function toggleCro
 // }
 
 var elements = document.querySelectorAll(".task_container");
-var cross = document.querySelector('.img_cross');
+var cross = document.querySelectorAll('.img_cross');
 
 var _loop = function _loop(i) {
   elements[i].addEventListener('mouseover', function () {
     for (var j = 0; i < cross.length; j++) {
-      if (elements[i].children(cross) == cross[j]) {
-        cross[j].style.display = 'flex';
-      }
+      elements[i].children(cross[j]);
+      cross[j].style.display = 'flex';
     }
   });
 

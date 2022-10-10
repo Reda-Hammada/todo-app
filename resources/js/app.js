@@ -60,7 +60,7 @@ const container = document.querySelector('#task_container');
 // }
 
 const elements = document.querySelectorAll(".task_container");
-const cross = document.querySelector('.img_cross');
+const cross = document.querySelectorAll('.img_cross');
 
 
 for(let i=0; i < elements.length; i++){
@@ -69,10 +69,9 @@ for(let i=0; i < elements.length; i++){
 
         for(let j=0; i < cross.length; j++){
 
-            if(elements[i].children(cross) == cross[j]){
-
+        elements[i].children(cross[j])
                 cross[j].style.display='flex';
-            }
+            
         }
     });
 

@@ -45,6 +45,18 @@
                         
          </div>
         @endforeach
+        <div class='last_container'>
+            <div class='count_items_container'>
+                <p>{{ $count }} items left</p>
+                    <ul>
+                    <li>All</li>
+                    <li>Active</li>
+                    <li>Completed</li>
+                </ul>
+            
+                <p >Clear completed</p>
+            </div>
+        </div>
     </section>
 </main>        
 @endsection

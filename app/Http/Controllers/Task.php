@@ -30,8 +30,8 @@ class Task extends Controller
         $user_id = Auth::id();
         $task = new Taskmodel();
         $tasks  = $task->All()->where('user_id', $user_id);
-
-        return view('task.dashboard', ['tasks' => $tasks]);
+        $count = count($tasks);
+        return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
 
     }
 
