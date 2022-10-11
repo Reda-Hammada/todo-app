@@ -7,67 +7,8 @@
   \*****************************/
 /***/ (() => {
 
-// // toggle delete cross 
-// const taskContainer = document.getElementById('task_container');
-// const delete_cross = document.getElementById('delete_cross');
-// taskContainer.addEventListener('mouseover',  function(){
-//         delete_cross.style.display='flex';
-// })
-// taskContainer.addEventListener('mouseout', function(){
-//     delete_cross.style.display='none';
-// })
-// // toggle chekcbox
-// const checkBox = document.getElementById('check');
-// const task  = document.getElementById('task');
-// checkBox.addEventListener('change', function(){
-//         if(this.checked){
-//             task.style.textDecoration = 'line-through';
-//         }else {
-//             task.style.textDecoration='none';
-//         }
-//     })
-// const container = document.querySelector('.ultimate_tasks_container');
-// container.addEventListener('mouseover', function(e){
-//     if(e.target.calssList.contains('task_container')){
-//         alert('it works')
-//     }
-// })
-var container = document.querySelector('#task_container'); // function toggleCross(){
-//     let cross = document.querySelector('.img_cross');
-//     cross.style.display = 'flex';
-// }
-
-var elements = document.querySelectorAll(".task_container");
+var container = document.querySelectorAll('.task_container');
 var cross = document.querySelectorAll('.img_cross');
-
-var _loop = function _loop(i) {
-  elements[i].addEventListener('mouseover', function () {
-    for (var j = 0; i < cross.length; j++) {
-      elements[i].children(cross[j]);
-      cross[j].style.display = 'flex';
-    }
-  });
-
-  var _loop2 = function _loop2(_i) {
-    elements[_i].addEventListener('mouseout', function () {
-      var cross = document.querySelector('.img_cross');
-
-      for (var j = 0; _i < cross.length; j++) {
-        if (elements[_i].children(cross[j])) {
-          cross[j].style.display = 'none';
-        }
-      }
-    });
-  };
-
-  for (var _i = 0; _i < elements.length; _i++) {
-    _loop2(_i);
-  }
-};
-
-for (var i = 0; i < elements.length; i++) {
-  _loop(i);
-}
 
 /***/ }),
 
