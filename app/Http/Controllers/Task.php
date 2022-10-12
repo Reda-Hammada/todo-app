@@ -86,6 +86,8 @@ class Task extends Controller
     {
         //
 
+      
+
     }
 
     /**
@@ -99,6 +101,26 @@ class Task extends Controller
     {
         //
         
+        if(isset($request->checked)):
+
+            $task = new Taskmodel();
+            $task->where('id',$id)->update(
+                ['status'=>'completed',
+            
+            ]);
+
+                return redirect()->route('task.index');
+        else:
+
+            $task = new Taskmodel();
+            $task->where('id',$id)->update(
+                ['status'=>'started',
+                
+                ]);
+
+                return redirect()->route('task.index');
+
+        endif;
 
     }
 
@@ -116,10 +138,13 @@ class Task extends Controller
         return redirect()->route('task.index');
     }
 
-    public function completed ($id){
+
+    public function completed (){
 
 
-    }
+            
+        }
+
 
     public function showCompleted(){
 

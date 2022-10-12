@@ -35,32 +35,44 @@
 
     <section class='ultimate_tasks_container'>
      
- 
-        @foreach($tasks as $task)
-         <div id="task_container"  class="task_container_light">
-            
-                <input id='check' type='checkbox' >
-                <p id='task'>{{ $task['task_name'] }}</p>
-                <form action="{{ route('task.destroy',[$task['id']]) }}" method="POST">
-                    @csrf 
-                    @method('DELETE')
-                  <button id='delete_button' type="submit"/><img class='img_cross'  src="{{ asset('images/icon-cross.svg') }}" /></button>
-                </form>
-                        
-         </div>
-        @endforeach
+            @foreach($tasks as $task)
+            <div id="task_container"  class="task_container_light">
+                    <form method='POST' action="{{ route('task.update',[$task['id']] )}}">
+                        @csrf
+                        @method('PATCH')
+                        @if($task['status']== 'completed')
+
+                            <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
+                            <p style='text-decoration:line-through' id='task'>{{ $task['task_name'] }}</p>
+
+                        @elseif($task['status'] == 'started')
+                            <input  onchange="this.form.submit()" type='checkbox'  name='checked' >
+                            <p  id='task'>{{ $task['task_name'] }}</p>
+                        @endif
+                    </form>
+                    <form action="{{ route('task.destroy',[$task['id']]) }}" method="POST">
+                        @csrf 
+                        @method('DELETE')
+                    <button id='delete_button' type="submit"/><img class='img_cross'  src="{{ asset('images/icon-cross.svg') }}" /></button>
+                    </form>
+                            
+            </div>
+            @endforeach
+
         <div class='last_container'>
             <div id='count_items_container' class='count_items_container_light'>
+
                 <p>{{ $count }} items left</p>
                     <ul>
-                    <li>All</li>
+                    <li>All1</li>
                     <li>Active</li>
                     <li>Completed</li>
                 </ul>
             
-                <p >Clear completed</p>
+                <p>Clear completed</p>
             </div>
         </div>
+
     </section>
 </main>        
 @endsection
