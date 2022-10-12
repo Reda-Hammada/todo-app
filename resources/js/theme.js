@@ -13,6 +13,12 @@ moon.addEventListener('click',() => {
     // body 
     document.body.classList.add('body')
 
+    // add form 
+
+    const addForm = document.getElementById('add_form');
+    addForm.classList.remove('add_todo_form_light');
+    addForm.classList.add('add_todo_form_dark');
+
 
     // task container 
 
@@ -21,7 +27,11 @@ moon.addEventListener('click',() => {
     taskContainer.classList.add('task_container_dark');
 
 
-    
+    // count items container
+    const countItemsContainer = document.getElementById('count_items_container');
+    countItemsContainer.classList.remove('count_items_container_light');
+    countItemsContainer.classList.add('count_items_container_dark');
+
 
 });
 

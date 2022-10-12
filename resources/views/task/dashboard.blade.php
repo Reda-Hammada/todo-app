@@ -15,7 +15,7 @@
             <img id='moon' src="{{asset('images/icon-moon.svg')}}" alt="light mode icon" >
         </div>
     </nav>
-    <div class="add_todo_form_light">
+    <div id="add_form" class="add_todo_form_light">
         <form method="POST" action = {{ route('task.store') }}>
 
             @csrf
@@ -50,7 +50,7 @@
          </div>
         @endforeach
         <div class='last_container'>
-            <div class='count_items_container'>
+            <div id='count_items_container' class='count_items_container_light'>
                 <p>{{ $count }} items left</p>
                     <ul>
                     <li>All</li>

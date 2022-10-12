@@ -115,4 +115,19 @@ class Task extends Controller
         $taskModel->delete();
         return redirect()->route('task.index');
     }
+
+    public function completed ($id){
+
+
+    }
+
+    public function showCompleted(){
+
+
+    }
+
+    public function clearCompleted(){
+
+        
+    }
 }
