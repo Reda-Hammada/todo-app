@@ -1,14 +1,59 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./resources/js/Storagemanager.js":
+/*!****************************************!*\
+  !*** ./resources/js/Storagemanager.js ***!
+  \****************************************/
+/***/ (() => {
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Stroagemanaer = /*#__PURE__*/_createClass(function Stroagemanaer() {
+  _classCallCheck(this, Stroagemanaer);
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+__webpack_require__(/*! ./theme */ "./resources/js/theme.js");
+
+__webpack_require__(/*! ./Storagemanager */ "./resources/js/Storagemanager.js");
 
 var container = document.querySelectorAll('.task_container');
 var cross = document.querySelectorAll('.img_cross');
+
+/***/ }),
+
+/***/ "./resources/js/theme.js":
+/*!*******************************!*\
+  !*** ./resources/js/theme.js ***!
+  \*******************************/
+/***/ (() => {
+
+// dark theme 
+var moon = document.getElementById('moon');
+moon.addEventListener('click', function () {
+  // header navbar 
+  var header = document.getElementById('header');
+  header.classList.remove('header_background_light');
+  header.classList.add('header_background_dark'); // body 
+
+  document.body.classList.add('body'); // task container 
+
+  var taskContainer = document.getElementById('task_container');
+  taskContainer.classList.remove('task_container_light');
+  taskContainer.classList.add('task_container_dark');
+}); // Light Theme
 
 /***/ }),
 

@@ -59,7 +59,7 @@ class Task extends Controller
         $taskModel->user_id = $user_id;
         $taskModel->save();
 
-        redirect('task');
+        return redirect()->route('task.index');
 
     }   
 
@@ -71,6 +71,10 @@ class Task extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
+     public function show($id){
+        
+     }
   
     /**
      * Show the form for editing the specified resource.
@@ -106,6 +110,9 @@ class Task extends Controller
      */
     public function destroy($id)
     {
-        //
+        $taskModel =  Taskmodel::findOrFail($id);
+
+        $taskModel->delete();
+        return redirect()->route('task.index');
     }
 }

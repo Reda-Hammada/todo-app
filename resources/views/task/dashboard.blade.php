@@ -6,16 +6,16 @@
 
 @section('content')
 
-<main class="header_background">
+<main id='header' class="header_background_light">
     <nav class="navbar_container">
         <div class="todo_heading_container">
             <h1>TODO</H1>
         </div>
         <div class='mode_icon_container'>
-            <img src="{{asset('images/icon-moon.svg')}}" alt="light mode icon" >
+            <img id='moon' src="{{asset('images/icon-moon.svg')}}" alt="light mode icon" >
         </div>
     </nav>
-    <div class="add_todo_form">
+    <div class="add_todo_form_light">
         <form method="POST" action = {{ route('task.store') }}>
 
             @csrf
@@ -37,11 +37,15 @@
      
  
         @foreach($tasks as $task)
-         <div   class="task_container">
+         <div id="task_container"  class="task_container_light">
             
                 <input id='check' type='checkbox' >
                 <p id='task'>{{ $task['task_name'] }}</p>
-                <a href="{{ route('task.destroy',[$task['id']]) }}"><img class='img_cross'  src="{{ asset('images/icon-cross.svg') }}" ></a>
+                <form action="{{ route('task.destroy',[$task['id']]) }}" method="POST">
+                    @csrf 
+                    @method('DELETE')
+                  <button id='delete_button' type="submit"/><img class='img_cross'  src="{{ asset('images/icon-cross.svg') }}" /></button>
+                </form>
                         
          </div>
         @endforeach
