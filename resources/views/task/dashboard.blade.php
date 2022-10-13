@@ -34,17 +34,26 @@
     </div>
 
     <section class='ultimate_tasks_container'>
-     
+        @if(route('task.index'))
             @foreach($tasks as $task)
+
             <div id="task_container"  class="task_container_light">
                     <form method='POST' action="{{ route('task.update',[$task['id']] )}}">
                         @csrf
                         @method('PATCH')
+                        {{-- display checked checkbox for checked tasks --}}
                         @if($task['status']== 'completed')
+                            <div>
 
-                            <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
-                            <p style='text-decoration:line-through' id='task'>{{ $task['task_name'] }}</p>
+                                <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
 
+                            </div>
+                            <div>
+
+                                <p style='text-decoration:line-through' id='task'>{{ $task['task_name'] }}</p>
+                            </div>
+                            
+                       {{-- display unchecked checkbox for unchecked tasks  --}}
                         @elseif($task['status'] == 'started')
                             <input  onchange="this.form.submit()" type='checkbox'  name='checked' >
                             <p  id='task'>{{ $task['task_name'] }}</p>
@@ -57,19 +66,20 @@
                     </form>
                             
             </div>
-            @endforeach
 
+            @endforeach
+        @endif
         <div class='last_container'>
             <div id='count_items_container' class='count_items_container_light'>
 
                 <p>{{ $count }} items left</p>
                     <ul>
-                    <li>All1</li>
+                    <li><a href="{{ route('task.index') }}">All</a></li>
                     <li>Active</li>
                     <li>Completed</li>
                 </ul>
             
-                <p>Clear completed</p>
+                <p><a href='{{route('tasks.clear')}}'>Clear completed</p>
             </div>
         </div>
 

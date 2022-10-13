@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::resource('task', Task::class);
+Route::get('/clear',[Task::class, 'clear'])->name('tasks.clear');
 Route::get('/',[HomeController::class, 'index']);
 Auth::routes();
 

@@ -30,7 +30,7 @@ class Task extends Controller
         $user_id = Auth::id();
         $task = new Taskmodel();
         $tasks  = $task->All()->where('user_id', $user_id);
-        $count = count($tasks);
+        $count =count( $task->get()->where('status', 'started'));
         return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
 
     }
@@ -151,8 +151,14 @@ class Task extends Controller
 
     }
 
-    public function clearCompleted(){
+    public function clear(){
 
-        
+            $task = new Taskmodel();
+            $task->where('status','completed')->update([
+
+                'status'=>'started',
+            ]);
+
+            return redirect()->route('task.index');
     }
 }
