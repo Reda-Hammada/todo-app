@@ -1,8 +1,7 @@
 
 require('./theme');
-require('./Storagemanager');
 
-// showing an hiding detele cross 
+// showing and hiding detele cross 
 const container = document.getElementsByClassName('task_container_light');
 const cross = document.getElementsByClassName('img_cross');
 

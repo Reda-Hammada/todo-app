@@ -261,6 +261,7 @@
     .img_cross {
 
         display:none;
+        cursor: pointer;
     }
 
  

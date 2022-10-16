@@ -12,7 +12,9 @@
             <h1>TODO</H1>
         </div>
         <div class='mode_icon_container'>
-            <img id='moon' src="{{asset('images/icon-moon.svg')}}" alt="light mode icon" >
+            <img id='moon' src="{{asset('images/icon-moon.svg')}}" alt="dark mode icon" >
+            <img style="display:none" id='sun' src="{{asset('images/icon-sun.svg')}}" alt="light mode icon" >
+
         </div>
     </nav>
     <div id="add_form" class="add_todo_form_light">

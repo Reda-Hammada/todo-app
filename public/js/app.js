@@ -1,45 +1,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./resources/js/Storagemanager.js":
-/*!****************************************!*\
-  !*** ./resources/js/Storagemanager.js ***!
-  \****************************************/
-/***/ (() => {
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-var Stroagemanaer = /*#__PURE__*/function () {
-  function Stroagemanaer() {
-    _classCallCheck(this, Stroagemanaer);
-  }
-
-  _createClass(Stroagemanaer, [{
-    key: "darkStorage",
-    value: function darkStorage(dark) {}
-  }, {
-    key: "lightStorage",
-    value: function lightStorage() {}
-  }]);
-
-  return Stroagemanaer;
-}();
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./theme */ "./resources/js/theme.js");
-
-__webpack_require__(/*! ./Storagemanager */ "./resources/js/Storagemanager.js"); // showing an hiding detele cross 
+__webpack_require__(/*! ./theme */ "./resources/js/theme.js"); // showing and hiding detele cross 
 
 
 var container = document.getElementsByClassName('task_container_light');
@@ -81,10 +49,77 @@ for (var _i = 0; _i < container.length; _i++) {
   \*******************************/
 /***/ (() => {
 
-// dark theme 
+// check selected theme in local storage 
+document.body.onload = function () {
+  if (localStorage.getItem('theme') == 'dark') {
+    moon.style.display = "none";
+    sun.style.display = 'flex'; // header navbar 
+
+    var header = document.getElementById('header');
+    header.classList.remove('header_background_light');
+    header.classList.add('header_background_dark'); // body 
+
+    document.body.classList.add('body'); // add form 
+
+    var addForm = document.getElementById('add_form');
+    addForm.classList.remove('add_todo_form_light');
+    addForm.classList.add('add_todo_form_dark'); // task container 
+
+    var taskContainer = document.querySelectorAll('.task_container_light');
+
+    for (var i = 0; i < taskContainer.length; i++) {
+      taskContainer[i].classList.add('task_container_dark');
+    } // count items container
+
+
+    var countItemsContainer = document.getElementById('count_items_container');
+    countItemsContainer.classList.remove('count_items_container_light');
+    countItemsContainer.classList.add('count_items_container_dark');
+  } else {
+    if (localStorage.getItem('theme') == "light") {
+      // header navbar 
+      moon.style.display = 'flex';
+      sun.style.display = 'none';
+
+      var _header = document.getElementById('header');
+
+      _header.classList.remove('header_background_dark');
+
+      _header.classList.add('header_background_light'); // body 
+
+
+      document.body.classList.remove('body'); // add form 
+
+      var _addForm = document.getElementById('add_form');
+
+      _addForm.classList.remove('add_todo_form_dark');
+
+      _addForm.classList.add('add_todo_form_light'); // task container 
+
+
+      var _taskContainer = document.querySelectorAll('.task_container_dark');
+
+      _taskContainer.classList.remove('task_container_dark');
+
+      _taskContainer.classList.add('task_container_light'); // count items container
+
+
+      var _countItemsContainer = document.getElementById('count_items_container');
+
+      _countItemsContainer.classList.remove('count_items_container_dark');
+
+      _countItemsContainer.classList.add('count_items_container_light');
+    }
+  }
+}; // dark theme 
+
+
 var moon = document.getElementById('moon');
 var dark = moon.addEventListener('click', function () {
-  // header navbar 
+  localStorage.setItem('theme', 'dark');
+  moon.style.display = "none";
+  sun.style.display = 'flex'; // header navbar 
+
   var header = document.getElementById('header');
   header.classList.remove('header_background_light');
   header.classList.add('header_background_dark'); // body 
@@ -95,13 +130,41 @@ var dark = moon.addEventListener('click', function () {
   addForm.classList.remove('add_todo_form_light');
   addForm.classList.add('add_todo_form_dark'); // task container 
 
-  var taskContainer = document.getElementById('task_container');
-  taskContainer.classList.remove('task_container_light');
-  taskContainer.classList.add('task_container_dark'); // count items container
+  var taskContainer = document.querySelectorAll('.task_container_light');
+
+  for (var i = 0; i < taskContainer.length; i++) {
+    taskContainer[i].classList.add('task_container_dark');
+  } // count items container
+
 
   var countItemsContainer = document.getElementById('count_items_container');
   countItemsContainer.classList.remove('count_items_container_light');
   countItemsContainer.classList.add('count_items_container_dark');
+}); // light theme 
+
+var sun = document.getElementById('sun');
+sun.addEventListener('click', function () {
+  localStorage.setItem('theme', 'light'); // header navbar 
+
+  moon.style.display = 'flex';
+  sun.style.display = 'none';
+  var header = document.getElementById('header');
+  header.classList.remove('header_background_dark');
+  header.classList.add('header_background_light'); // body 
+
+  document.body.classList.remove('body'); // add form 
+
+  var addForm = document.getElementById('add_form');
+  addForm.classList.remove('add_todo_form_dark');
+  addForm.classList.add('add_todo_form_light'); // task container 
+
+  var taskContainer = document.querySelectorAll('.task_container_dark');
+  taskContainer.classList.remove('task_container_dark');
+  taskContainer.classList.add('task_container_light'); // count items container
+
+  var countItemsContainer = document.getElementById('count_items_container');
+  countItemsContainer.classList.remove('count_items_container_dark');
+  countItemsContainer.classList.add('count_items_container_light');
 }); // Light Theme
 
 /***/ }),
