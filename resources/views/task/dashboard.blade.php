@@ -38,7 +38,7 @@
     <section class='ultimate_tasks_container'>
             @foreach($tasks as $task)
 
-            <div  id="task_container"  class="task_container_light">
+            <div  id="task_container"   class="task_container_light">
                     <form method='POST' action="{{ route('task.update',[$task['id']] )}}">
                         @csrf
                         @method('PATCH')
@@ -71,7 +71,7 @@
             @endforeach
      
         <div class='last_container'>
-            <div id='count_items_container' class='count_items_container_light'>
+            <div  id='count_items_container' class='count_items_container_light'>
 
                 <p>{{ $count }} items left</p>
                     <ul>

@@ -298,6 +298,20 @@
     
     }
 
+    .count_items_container_light ul li a {
+
+        text-decoration: none;
+        color:  #000;
+        
+    
+    }
+
+    .count_items_container_light p a {
+
+        text-decoration: none;
+        color:  #000;
+    }
+
     .count_items_container_light ul li:hover {
 
         color:var(--insert-button);
@@ -402,6 +416,22 @@
         list-style-type: none;
         display:inline;
         cursor:pointer
+        
+    
+    }
+
+    .count_items_container_dark ul li a {
+
+        text-decoration: none;
+        color:#fff;
+        
+    
+    }
+
+    .count_items_container_dark p a {
+
+        text-decoration: none;
+        color:#fff;
         
     
     }

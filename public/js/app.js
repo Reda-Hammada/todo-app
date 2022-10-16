@@ -52,71 +52,28 @@ for (var _i = 0; _i < container.length; _i++) {
 // check selected theme in local storage 
 document.body.onload = function () {
   if (localStorage.getItem('theme') == 'dark') {
-    moon.style.display = "none";
-    sun.style.display = 'flex'; // header navbar 
-
-    var header = document.getElementById('header');
-    header.classList.remove('header_background_light');
-    header.classList.add('header_background_dark'); // body 
-
-    document.body.classList.add('body'); // add form 
-
-    var addForm = document.getElementById('add_form');
-    addForm.classList.remove('add_todo_form_light');
-    addForm.classList.add('add_todo_form_dark'); // task container 
-
-    var taskContainer = document.querySelectorAll('.task_container_light');
-
-    for (var i = 0; i < taskContainer.length; i++) {
-      taskContainer[i].classList.add('task_container_dark');
-    } // count items container
-
-
-    var countItemsContainer = document.getElementById('count_items_container');
-    countItemsContainer.classList.remove('count_items_container_light');
-    countItemsContainer.classList.add('count_items_container_dark');
+    darkMode();
   } else {
     if (localStorage.getItem('theme') == "light") {
-      // header navbar 
-      moon.style.display = 'flex';
-      sun.style.display = 'none';
-
-      var _header = document.getElementById('header');
-
-      _header.classList.remove('header_background_dark');
-
-      _header.classList.add('header_background_light'); // body 
-
-
-      document.body.classList.remove('body'); // add form 
-
-      var _addForm = document.getElementById('add_form');
-
-      _addForm.classList.remove('add_todo_form_dark');
-
-      _addForm.classList.add('add_todo_form_light'); // task container 
-
-
-      var _taskContainer = document.querySelectorAll('.task_container_dark');
-
-      _taskContainer.classList.remove('task_container_dark');
-
-      _taskContainer.classList.add('task_container_light'); // count items container
-
-
-      var _countItemsContainer = document.getElementById('count_items_container');
-
-      _countItemsContainer.classList.remove('count_items_container_dark');
-
-      _countItemsContainer.classList.add('count_items_container_light');
+      lightMode();
     }
   }
-}; // dark theme 
+}; // dark theme event 
 
 
 var moon = document.getElementById('moon');
 var dark = moon.addEventListener('click', function () {
   localStorage.setItem('theme', 'dark');
+  darkMode();
+}); // light theme event
+
+var sun = document.getElementById('sun');
+sun.addEventListener('click', function () {
+  localStorage.setItem('theme', 'light');
+  lightMode();
+}); // dark mode 
+
+var darkMode = function darkMode() {
   moon.style.display = "none";
   sun.style.display = 'flex'; // header navbar 
 
@@ -130,7 +87,7 @@ var dark = moon.addEventListener('click', function () {
   addForm.classList.remove('add_todo_form_light');
   addForm.classList.add('add_todo_form_dark'); // task container 
 
-  var taskContainer = document.querySelectorAll('.task_container_light');
+  var taskContainer = document.getElementsByClassName('task_container_light');
 
   for (var i = 0; i < taskContainer.length; i++) {
     taskContainer[i].classList.add('task_container_dark');
@@ -140,14 +97,13 @@ var dark = moon.addEventListener('click', function () {
   var countItemsContainer = document.getElementById('count_items_container');
   countItemsContainer.classList.remove('count_items_container_light');
   countItemsContainer.classList.add('count_items_container_dark');
-}); // light theme 
+}; // Light Theme 
 
-var sun = document.getElementById('sun');
-sun.addEventListener('click', function () {
-  localStorage.setItem('theme', 'light'); // header navbar 
 
+var lightMode = function lightMode() {
   moon.style.display = 'flex';
-  sun.style.display = 'none';
+  sun.style.display = 'none'; // header navbar 
+
   var header = document.getElementById('header');
   header.classList.remove('header_background_dark');
   header.classList.add('header_background_light'); // body 
@@ -158,14 +114,17 @@ sun.addEventListener('click', function () {
   addForm.classList.remove('add_todo_form_dark');
   addForm.classList.add('add_todo_form_light'); // task container 
 
-  var taskContainer = document.querySelectorAll('.task_container_dark');
-  taskContainer.classList.remove('task_container_dark');
-  taskContainer.classList.add('task_container_light'); // count items container
+  var taskContainer = document.getElementsByClassName('task_container_light');
+
+  for (var i = 0; i < taskContainer.length; i++) {
+    taskContainer[i].classList.remove('task_container_dark');
+  } // count items container
+
 
   var countItemsContainer = document.getElementById('count_items_container');
   countItemsContainer.classList.remove('count_items_container_dark');
   countItemsContainer.classList.add('count_items_container_light');
-}); // Light Theme
+};
 
 /***/ }),
 
