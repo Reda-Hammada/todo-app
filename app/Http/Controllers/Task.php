@@ -138,18 +138,28 @@ class Task extends Controller
         return redirect()->route('task.index');
     }
 
+    
+    public function active(){
+
+        $user_id = Auth::id();
+        $task = new Taskmodel();
+        $tasks  = $task->All()->where('user_id', $user_id)->where('status','started');
+        $count =count( $task->get()->where('status', 'started'));
+        return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
+    }
 
     public function completed (){
 
-
+            
+                $user_id = Auth::id();
+                $task = new Taskmodel();
+                $tasks  = $task->All()->where('user_id', $user_id)->where('status','completed');
+                $count =count( $task->get()->where('status', 'started'));
+                return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
             
         }
 
 
-    public function showCompleted(){
-
-
-    }
 
     public function clear(){
 

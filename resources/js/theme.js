@@ -3,7 +3,7 @@
 // dark theme 
 const moon = document.getElementById('moon');
 
-moon.addEventListener('click',() => {
+const dark = moon.addEventListener('click',() => {
 
     // header navbar 
     const header = document.getElementById('header');

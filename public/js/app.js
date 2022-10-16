@@ -7,15 +7,27 @@
   \****************************************/
 /***/ (() => {
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var Stroagemanaer = /*#__PURE__*/function () {
+  function Stroagemanaer() {
+    _classCallCheck(this, Stroagemanaer);
+  }
 
-var Stroagemanaer = /*#__PURE__*/_createClass(function Stroagemanaer() {
-  _classCallCheck(this, Stroagemanaer);
-});
+  _createClass(Stroagemanaer, [{
+    key: "darkStorage",
+    value: function darkStorage(dark) {}
+  }, {
+    key: "lightStorage",
+    value: function lightStorage() {}
+  }]);
+
+  return Stroagemanaer;
+}();
 
 /***/ }),
 
@@ -27,10 +39,39 @@ var Stroagemanaer = /*#__PURE__*/_createClass(function Stroagemanaer() {
 
 __webpack_require__(/*! ./theme */ "./resources/js/theme.js");
 
-__webpack_require__(/*! ./Storagemanager */ "./resources/js/Storagemanager.js");
+__webpack_require__(/*! ./Storagemanager */ "./resources/js/Storagemanager.js"); // showing an hiding detele cross 
 
-var container = document.querySelectorAll('.task_container');
-var cross = document.querySelectorAll('.img_cross');
+
+var container = document.getElementsByClassName('task_container_light');
+var cross = document.getElementsByClassName('img_cross');
+
+var _loop = function _loop(i) {
+  container[i].onmouseover = function show() {
+    for (var j = 0; j < cross.length; j++) {
+      if (container[i].contains(cross[j])) {
+        cross[j].style.display = 'flex';
+      }
+    }
+  };
+};
+
+for (var i = 0; i < container.length; i++) {
+  _loop(i);
+}
+
+var _loop2 = function _loop2(_i) {
+  container[_i].onmouseout = function hide() {
+    for (var j = 0; j < cross.length; j++) {
+      if (container[_i].contains(cross[j])) {
+        cross[j].style.display = 'none';
+      }
+    }
+  };
+};
+
+for (var _i = 0; _i < container.length; _i++) {
+  _loop2(_i);
+}
 
 /***/ }),
 
@@ -42,7 +83,7 @@ var cross = document.querySelectorAll('.img_cross');
 
 // dark theme 
 var moon = document.getElementById('moon');
-moon.addEventListener('click', function () {
+var dark = moon.addEventListener('click', function () {
   // header navbar 
   var header = document.getElementById('header');
   header.classList.remove('header_background_light');

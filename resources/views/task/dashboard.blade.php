@@ -34,10 +34,9 @@
     </div>
 
     <section class='ultimate_tasks_container'>
-        @if(route('task.index'))
             @foreach($tasks as $task)
 
-            <div id="task_container"  class="task_container_light">
+            <div  id="task_container"  class="task_container_light">
                     <form method='POST' action="{{ route('task.update',[$task['id']] )}}">
                         @csrf
                         @method('PATCH')
@@ -62,21 +61,21 @@
                     <form action="{{ route('task.destroy',[$task['id']]) }}" method="POST">
                         @csrf 
                         @method('DELETE')
-                    <button id='delete_button' type="submit"/><img class='img_cross'  src="{{ asset('images/icon-cross.svg') }}" /></button>
+                    <button class='img_cross' id='delete_button' type="submit"/><img   src="{{ asset('images/icon-cross.svg') }}" /></button>
                     </form>
                             
             </div>
 
             @endforeach
-        @endif
+     
         <div class='last_container'>
             <div id='count_items_container' class='count_items_container_light'>
 
                 <p>{{ $count }} items left</p>
                     <ul>
                     <li><a href="{{ route('task.index') }}">All</a></li>
-                    <li>Active</li>
-                    <li>Completed</li>
+                    <li><a href="{{ route('task.active') }}">Active</a></li>
+                    <li><a href="{{route('task.completed')}}">Completed</a></li>
                 </ul>
             
                 <p><a href='{{route('tasks.clear')}}'>Clear completed</p>
