@@ -25,13 +25,11 @@ class Task extends Controller
     public function index()
     {
         //
-
-
         $user_id = Auth::id();
         $task = new Taskmodel();
         $tasks  = $task->All()->where('user_id', $user_id);
         $count =count( $task->get()->where('status', 'started'));
-        return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
+        return view('task.dashboard', ['tasks' => $tasks , 'count' => $count ,'route'=>request()->route()->getName()]);
 
     }
 
@@ -109,16 +107,15 @@ class Task extends Controller
             
             ]);
 
-                return redirect()->route('task.index');
+            return redirect()->route('task.index');
+            
         else:
 
             $task = new Taskmodel();
             $task->where('id',$id)->update(
-                ['status'=>'started',
-                
-                ]);
+                ['status'=>'started',]);
 
-                return redirect()->route('task.index');
+            return redirect()->route('task.index');
 
         endif;
 
@@ -133,8 +130,8 @@ class Task extends Controller
     public function destroy($id)
     {
         $taskModel =  Taskmodel::findOrFail($id);
-
         $taskModel->delete();
+
         return redirect()->route('task.index');
     }
 
@@ -145,7 +142,8 @@ class Task extends Controller
         $task = new Taskmodel();
         $tasks  = $task->All()->where('user_id', $user_id)->where('status','started');
         $count = count( $task->get()->where('status', 'started'));
-        return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
+
+        return view('task.dashboard', ['tasks' => $tasks , 'count' => $count,'route'=>request()->route()->getName()]);
     }
 
     public function completed (){
@@ -154,8 +152,9 @@ class Task extends Controller
                 $user_id = Auth::id();
                 $task = new Taskmodel();
                 $tasks  = $task->All()->where('user_id', $user_id)->where('status','completed');
-                $count =count( $task->get()->where('status', 'started'));
-                return view('task.dashboard', ['tasks' => $tasks , 'count' => $count]);
+                $count = count($task->get()->where('status', 'started'));
+
+                return view('task.dashboard', ['tasks' => $tasks , 'count' => $count,'route'=>request()->route()->getName()]);
             
         }
 
@@ -168,7 +167,6 @@ class Task extends Controller
 
                 'status'=>'started',
             ]);
-
             return redirect()->route('task.index');
     }
 }

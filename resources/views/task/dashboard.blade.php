@@ -25,7 +25,7 @@
             <div>
                 <input type='text' 
                         name='task'
-                        value="Create a new todo...">
+                        placeholder="Create a new todo...">
             </div>
             <div class='submit_container'>
                 <input type="submit"
@@ -44,20 +44,27 @@
                         @method('PATCH')
                         {{-- display checked checkbox for checked tasks --}}
                         @if($task['status']== 'completed')
-                            <div>
 
-                                <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
-
+                            <div class="check_task_container">
+                                <div>
+                                    <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
+                                </div>
+                                <div>
+                                    <p style='text-decoration:line-through; color:hsla(236, 33%, 92%, 1)' id='task'>{{ $task['task_name'] }}</p>
+                                </div>
                             </div>
-                            <div>
 
-                                <p style='text-decoration:line-through' id='task'>{{ $task['task_name'] }}</p>
-                            </div>
-                            
                        {{-- display unchecked checkbox for unchecked tasks  --}}
                         @elseif($task['status'] == 'started')
-                            <input  onchange="this.form.submit()" type='checkbox'  name='checked' >
-                            <p  id='task'>{{ $task['task_name'] }}</p>
+                                <div class="check_task_container">
+                                    <div>
+                                        <input  onchange="this.form.submit()" type='checkbox'  name='checked' >
+                                    </div>
+                                    <div>
+                                        <p  id='task'>{{ $task['task_name'] }}</p>
+                                    </div>
+
+                                </div>
                         @endif
                     </form>
                     <form action="{{ route('task.destroy',[$task['id']]) }}" method="POST">
@@ -75,9 +82,9 @@
 
                 <p>{{ $count }} items left</p>
                     <ul>
-                    <li><a href="{{ route('task.index') }}">All</a></li>
-                    <li><a href="{{ route('task.active') }}">Active</a></li>
-                    <li><a href="{{route('task.completed')}}">Completed</a></li>
+                    <li>@if(  $route   == 'task.index')<a style='color:blue' href="{{ route('task.index') }}">All</a>@else<a href="{{ route('task.index') }}">All</a>@endif</li>
+                    <li>@if($route == 'task.active')<a style='color:blue' href="{{ route('task.active') }}">Active</a>@else <a href="{{ route('task.active') }}">Active</a>@endif</li>
+                    <li>@if($route == 'task.completed')<a style='color:blue' href="{{route('task.completed')}}">Completed</a>@else<a href='{{ route('task.completed') }}'>Completed</a>@endif</li>
                 </ul>
             
                 <p><a href='{{route('tasks.clear')}}'>Clear completed</p>

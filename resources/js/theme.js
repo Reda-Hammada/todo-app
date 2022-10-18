@@ -63,7 +63,8 @@ const darkMode= () => {
             const addForm = document.getElementById('add_form');
             addForm.classList.remove('add_todo_form_light');
             addForm.classList.add('add_todo_form_dark');
-
+            
+            // // delete cross
 
             // task container 
 
@@ -121,6 +122,8 @@ const lightMode  = () => {
 
           }
           
+       
+
           
 
           // count items container

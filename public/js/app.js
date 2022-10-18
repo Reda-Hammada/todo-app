@@ -85,7 +85,8 @@ var darkMode = function darkMode() {
 
   var addForm = document.getElementById('add_form');
   addForm.classList.remove('add_todo_form_light');
-  addForm.classList.add('add_todo_form_dark'); // task container 
+  addForm.classList.add('add_todo_form_dark'); // // delete cross
+  // task container 
 
   var taskContainer = document.getElementsByClassName('task_container_light');
 

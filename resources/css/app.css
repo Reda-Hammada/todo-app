@@ -238,7 +238,7 @@
         display: flex;
         padding-left:10%;
         padding-right:10%;
-
+        border-radius: 2px;
         justify-content: space-between;
     }
 
@@ -256,6 +256,19 @@
 
     }
 
+    .img_cross{
+
+        border: hidden;
+        color:whitesmoke;
+        background-color: #fff;
+    }
+
+    
+    .check_task_container {
+
+        display: flex;
+        margin-left: 4%;
+    }
 
 
     .img_cross {
@@ -317,7 +330,7 @@
         color:var(--insert-button);
     }
 
-    .count_items_container_light p:hover {
+    .count_items_container_light p:not(:first-child):hover {
         color:var(--insert-button);
         cursor:pointer;
 
@@ -395,6 +408,13 @@
         justify-content: space-between;
     }
 
+    .img_cross_dark{
+
+        border: hidden;
+        color:whitesmoke;
+        background-color: var(--tasks-container-dark-theme);
+    }
+
     .count_items_container_dark{
         
         width:100%;
@@ -463,6 +483,9 @@
     }
   
     /* hide welcome back */
+
+      /* Login & register page */
+
     .bg_container {
 
         display:none;
@@ -479,13 +502,23 @@
 
     .ultimate_tasks_container{
 
-        width: 80%;
-        margin-top:10%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+               margin-top:10%;
     }
 
-    .add_todo_form form input[type=text]{
+ 
 
-        width: 80%;
+    .add_todo_form_light form input[type=text]{
+
+        width: 90%;
+        margin-bottom: 5%;
+    }
+
+    .add_todo_form_dark form input[type=text]{
+
+        width: 90%;
         margin-bottom: 5%;
     }
 
@@ -508,7 +541,26 @@
         height: 55vh;
     }
 
+    .navbar_container{
+
+        justify-content: space-between;
+        padding-left: 10%;
+        padding-right: 10%;
+
+    }
+
+    .count_items_container_light{
+
+        margin-top: 2%;
+        border-radius: 2px;
+
+    }
+    
+    .count_items_container_dark {
+
+        margin-top: 2%;
+        border-radius: 2px;
+    }
  
-     /* Login & register page */
 
 }
