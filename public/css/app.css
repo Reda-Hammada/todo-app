@@ -16,6 +16,7 @@
     --dark-theme-color:  hsl(233, 14%, 35%);
     --tasks-container-dark-theme :  hsla(237, 14%, 26%, 1);
     --login-register-bg-color: #4E4E91;
+    --font-size: 16px;
 
  }
 
@@ -26,6 +27,7 @@
 
         background-color: var(--backround-color);
         font-family: var(--universal-font);
+        font-size: var(--font-size);
     }
     /* Login and Register */
     .ultimate_container {
@@ -230,24 +232,38 @@
         width :100%;
         background-color: #fff;
         height: 50px;
-        padding-top:2%;
+        padding-top:3%;
+        padding-right: 10%;
         border-bottom: solid 1px whitesmoke;
         cursor: pointer;
         display: flex;
-        padding-left:10%;
-        padding-right:10%;
         border-radius: 2px;
+        padding-left: 10%;
         justify-content: space-between;
     }
 
-    .task_container:first-child {
+    .task_container_light:first-child {
 
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
 
     }
     
-    .task_container:last-child {
+    .task_container_light:last-child {
+
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+    }
+
+    .task_container_dark:first-child {
+
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+    }
+    
+    .task_container_dark:last-child {
 
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
@@ -265,9 +281,9 @@
     .check_task_container {
 
         display: flex;
-        margin-left: 4%;
     }
 
+    
 
     .img_cross {
 
@@ -276,10 +292,7 @@
     }
 
  
-    .task_container p {
-
-        text-align:center;
-    }
+   
    
     .last_container {
 
@@ -335,6 +348,50 @@
         cursor:pointer;
 
     }
+
+     /* Checkbox costume styling */
+     .check_container {
+
+        position: relative;
+        right:30px;
+        bottom:5px;
+        height: 25px;
+        border-radius: 20px;
+        width: 25px;
+        border: solid 1px grey;
+
+    }
+
+    .check_container:hover{
+
+    
+    }
+
+ 
+    .check_container  ~  input[type=checkbox]:checked { 
+        
+        background-color:blue;  
+
+
+     } 
+
+ .check_container input[type=checkbox]{
+
+        position: absolute;
+        top:0;
+        bottom:0;
+        opacity: 0;
+        cursor: pointer;
+        
+
+    }
+   
+   
+      
+
+
+    /* Checkbox costume styling */
+
  
 
 
@@ -413,7 +470,7 @@
         border: hidden;
         color:whitesmoke;
         background-color: var(--tasks-container-dark-theme);
-    }
+    }   
 
     .count_items_container_dark{
         

@@ -1,4 +1,5 @@
 // check selected theme in local storage 
+
 document.body.onload = ()=> {
 
     if(localStorage.getItem('theme') == 'dark'){

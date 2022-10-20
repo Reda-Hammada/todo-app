@@ -38,16 +38,17 @@
     <section class='ultimate_tasks_container'>
             @foreach($tasks as $task)
 
-            <div  id="task_container"   class="task_container_light">
+            <div  draggable="true" id="task_container"   class="task_container_light">
                     <form method='POST' action="{{ route('task.update',[$task['id']] )}}">
                         @csrf
                         @method('PATCH')
                         {{-- display checked checkbox for checked tasks --}}
-                        @if($task['status']== 'completed')
+                        @if($task['status'] == 'completed')
 
                             <div class="check_task_container">
-                                <div>
+                                <div class='check_container'>
                                     <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
+                                    <span class='checkmark'></span>
                                 </div>
                                 <div>
                                     <p style='text-decoration:line-through; color:hsla(236, 33%, 92%, 1)' id='task'>{{ $task['task_name'] }}</p>
@@ -56,15 +57,14 @@
 
                        {{-- display unchecked checkbox for unchecked tasks  --}}
                         @elseif($task['status'] == 'started')
-                                <div class="check_task_container">
-                                    <div>
-                                        <input  onchange="this.form.submit()" type='checkbox'  name='checked' >
-                                    </div>
-                                    <div>
-                                        <p  id='task'>{{ $task['task_name'] }}</p>
-                                    </div>
-
-                                </div>
+                        <div class="check_task_container">
+                            <div class='check_container'>
+                                <input  onchange="this.form.submit()" id='check' type='checkbox'  name='checked' >
+                            </div>
+                            <div>
+                                <p  id='task'>{{ $task['task_name'] }}</p>
+                            </div>
+                        </div>
                         @endif
                     </form>
                     <form action="{{ route('task.destroy',[$task['id']]) }}" method="POST">
@@ -82,7 +82,7 @@
 
                 <p>{{ $count }} items left</p>
                     <ul>
-                    <li>@if(  $route   == 'task.index')<a style='color:blue' href="{{ route('task.index') }}">All</a>@else<a href="{{ route('task.index') }}">All</a>@endif</li>
+                    <li>@if($route == 'task.index')<a style='color:blue' href="{{ route('task.index') }}">All</a>@else<a href="{{ route('task.index') }}">All</a>@endif</li>
                     <li>@if($route == 'task.active')<a style='color:blue' href="{{ route('task.active') }}">Active</a>@else <a href="{{ route('task.active') }}">Active</a>@endif</li>
                     <li>@if($route == 'task.completed')<a style='color:blue' href="{{route('task.completed')}}">Completed</a>@else<a href='{{ route('task.completed') }}'>Completed</a>@endif</li>
                 </ul>
