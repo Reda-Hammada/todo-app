@@ -45,10 +45,11 @@
                         {{-- display checked checkbox for checked tasks --}}
                         @if($task['status'] == 'completed')
 
-                            <div class="check_task_container">
-                                <div class='check_container'>
-                                    <input  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
-                                    <span class='checkmark'></span>
+                            <div    class="check_task_container">
+                                <div style="background: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+                                border:hidden;" class='check_container'>
+                                    <input style='display:flex; color:#fff;'  onchange="this.form.submit()" id='check' type='checkbox' checked name='checked' >
+                                    <span  class='checkmark'></span>
                                 </div>
                                 <div>
                                     <p style='text-decoration:line-through; color:hsla(236, 33%, 92%, 1)' id='task'>{{ $task['task_name'] }}</p>
