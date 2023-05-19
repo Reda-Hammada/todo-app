@@ -8,7 +8,7 @@ Simple CRUD todo-list application with authentication and light and dark theme
 
 ## Register
 
-![Register](/images/signup.png)
+[![signup](https://www.linkpicture.com/q/Login_8.png)](https://www.linkpicture.com/view.php?img=LPic6467c9f6224e538832005)
 
 ## Dashboard
 
