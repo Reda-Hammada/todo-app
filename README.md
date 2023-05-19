@@ -1,19 +1,19 @@
 # TODO-LIST Application
 
-Simple CRUD todo-list application with authentication with light and dark theme
+Simple CRUD todo-list application with authentication and light and dark theme
 
 ## Login
 
-![light theme]({{ asset('images/Login.png') }})
+![Login](/images/Login.png)
 
 ## Register
 
-![light theme]({{ asset('images/signup.png') }})
+![Register](/images/signup.png)
 
 ## Dashboard
 
-![light theme]({{ asset('images/blight.png') }})
-![light theme]({{ asset('images/dark.png') }})
+![light theme](/images/blight.png)
+![light theme](/images/dark.png)
 
 ### Built with :
 
