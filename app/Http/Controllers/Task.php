@@ -28,7 +28,8 @@ class Task extends Controller
         $user_id = Auth::id();
         $task = new Taskmodel();
         $tasks  = $task->All()->where('user_id', $user_id);
-        $count =count( $task->get()->where('status', 'started'));
+        $count = count( $task->get()->where('status', 'started'));
+
         return view('task.dashboard', ['tasks' => $tasks , 'count' => $count ,'route'=>request()->route()->getName()]);
 
     }
@@ -103,9 +104,7 @@ class Task extends Controller
 
             $task = new Taskmodel();
             $task->where('id',$id)->update(
-                ['status'=>'completed',
-            
-            ]);
+                ['status'=>'completed',]);
 
             return redirect()->route('task.index');
             
